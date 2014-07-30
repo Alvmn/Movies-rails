@@ -1,0 +1,39 @@
+<html>
+<head>
+    <style>
+        #loadImg{
+            margin-left: auto;
+            margin-right: auto;
+            left:0;
+            right:0;
+
+            z-index: 10;
+            width: 160px;
+            height: 24px;
+            background: url(assets/loadingimage.gif) no-repeat;
+            cursor: wait;
+            display: none;
+        }
+        #loadBg{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.0);
+            -webkit-transition: background-color 0.5s;
+        }
+    </style>
+</head>
+<body>
+    Search by Id:
+    <form >
+        <input id = "id_text" type="text" name="id" required /><br>
+        <input id = "button" type="submit" value="Search" />
+    </form>
+    
+    <div id="loadImg"></div>
+    <div id="films"></div>
+    
+</body>
+</html>
