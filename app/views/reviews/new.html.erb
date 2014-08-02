@@ -1,0 +1,17 @@
+<% if @review.errors.any? %>
+		<ul>
+			<% @review.errors.full_messages.each do |error_msg| %>
+			<li class="error_msg"><%= error_msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+<%= form_for [@movie, @review] do |x| %>
+	<%= x.label :email %>
+	<%= x.text_field :email %>
+	<br>
+	<%= x.label :comment %>
+	<%= x.text_area :comment %>
+	<br>
+	<%= x.submit "Save" %>
+<% end %>

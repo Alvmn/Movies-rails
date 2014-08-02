@@ -1,0 +1,13 @@
+<body class="body_members">
+<p class="movietitle"><%= @movies.title %></p>
+<div class="film_specific_box">
+	<img style=" width: 240px; height: 330px" src=<%= (@movies.poster)? @movies.poster : "http://moviecarpet.com/wp-content/uploads/2011/05/no-poster.jpg" %>>
+</div>
+<h1> Cast Members </h1>
+	<% @movies.cast_members.each do |member| %>
+	<div class="c_members">
+        <p> -- <%= member.full_name %>, </p><br>        
+        </div>
+        <% end %>
+         
+</body>

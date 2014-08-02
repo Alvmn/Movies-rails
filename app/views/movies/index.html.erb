@@ -1,0 +1,14 @@
+   <body class="body_members">
+   <% @movies.each do |movie| %>
+        <div class="film_box">
+        
+            <a href="/movies/<%= "#{movie.id}" %>"><img style="width: 240px; height: 330px" src=<%= (movie.poster)? movie.poster : "http://moviecarpet.com/wp-content/uploads/2011/05/no-poster.jpg" %>></img></a>
+        <div class="title_box"><p  style="font-weight:bold">
+            <%= movie.title  %>
+        </p></div>
+    
+
+ </div>
+ <% end %>
+ </body>
+  

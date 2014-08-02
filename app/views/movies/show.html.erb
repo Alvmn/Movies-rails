@@ -1,0 +1,16 @@
+<body class="body_members">
+<p><%= link_to("Back to movies",movies_path) %></p> <!-- Este movies path no necesita (argument) porque no requiere id para volver a movies -->
+<p class="movietitle"><%= @movies.title %>  <%= link_to("Delete Movie", movie_path(@movies), method: "delete", data: {confirm: "Are you sure?"}) %> </p>
+<p><%= link_to("Edit movie",edit_movie_path(@movies)) %></p>
+<div class="film_specific_box">
+	<img style=" width: 240px; height: 330px" src=<%= (@movies.poster)? @movies.poster : "http://moviecarpet.com/wp-content/uploads/2011/05/no-poster.jpg" %>>
+</div>
+<h1> Cast Members </h1>
+	<% @movies.cast_members.each do |member| %><!--  En realidad este movies es solo una movie -->
+	<div class="c_members">
+        <p> -- <a><%= link_to(member.full_name, cast_member_path(member)) %></a> </p><br>        
+        </div>
+        <% end %>
+        <p><%= link_to("See my reviews :P",	movie_reviews_path(@movies)) %></p>
+         
+</body>

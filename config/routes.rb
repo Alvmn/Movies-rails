@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
+  resources :movies do
+    resources :cast_members, shallow: true
+    resources :reviews
+  end
+  
   get "/" => "main#index"
-  get "/movies" => "main#movies"
-  get "/movies/:id" => "main#show"
+  # get "/movies" => "main#movies"
+  # get "/movies/:id" => "main#show" 
+  #Con el resources ahora se requiere movies#index y movies#show
+  get "/cast_members" => "cast_members#index"
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,9 @@
+<h1> Movies of <%= @actor.full_name %> </h1>
+<div>
+	
+	<% @actor_movies.each do |movie| %>
+		<a href="/movies/<%= "#{movie.id}" %>"><img src=<%= movie.poster %> class="image_movieactor">
+		<%= movie.title%>
+	<% end %>
+
+</div>

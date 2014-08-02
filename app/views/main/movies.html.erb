@@ -1,25 +1,14 @@
-<script>
-var movies = [
-<% @movies.each do |movie|%>
-    <%= "{title: #{movie.title}, year: #{movie.year}}," %>
-<% end %>
-];
 
-</script>
-<table>
-    <tr>
-    <% @movies.each_with_index do |movie, index| %>
-        <% puts movie %>
-        <td class="poster" id=<%= index %> >
-            <img style="text-align:center; width: 85px; height: 128px" src=<%= (movie.poster)? movie.poster : "http://moviecarpet.com/wp-content/uploads/2011/05/no-poster.jpg" %>></img>
-        </td>
-    <% end %>
-    </tr>
-    <tr>
-        <% @movies.each_with_index do |movie, index| %>
-        <td class = "title" id=<%= index %> style="font-weight:bold;">
+        
+        <% @movies.each do |movie| %>
+        <div class="film_box">
+        
+            <a href="/movies/<%= "#{movie.id}" %>"><img style="text-align:center; width: 240px; height: 330px" src=<%= (movie.poster)? movie.poster : "http://moviecarpet.com/wp-content/uploads/2011/05/no-poster.jpg" %>></img></a>
+        <p  style="font-weight:bold; text-align:center">
             <%= movie.title  %>
-        </td>
-    <% end %>
-    </tr>
-</table>
+        </p>
+    
+
+ </div>
+ <% end %>
+  

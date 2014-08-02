@@ -43,14 +43,14 @@ end
 
 
 puts "Starting Seed."
-movies = ImdbRetriever.new("teletubies").movies(100)
-puts "IMDB downloaded query."
+movies = ImdbRetriever.new("Harry Potter").movies(20)
+puts "Allá va."
 puts "\n Movies:"
 movies.each do |movie|
   puts movie.title
   dbMovie = Movie.create(title: movie.title, year: movie.year, description: movie.plot, poster: movie.poster)
   movie.cast_members.each do |name|
     dbMember = CastMember.find_or_create_by(full_name: name)
-    dbMember.movies << dbMovie
+    dbMovie.cast_members << dbMember
   end
 end

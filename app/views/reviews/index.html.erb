@@ -1,0 +1,7 @@
+<h1 align="CENTER"> Review created!!! </h1>
+<p><%= link_to("Create a new review",new_movie_review_path(@movie, @reviews)) %></p>
+<% @reviews.each do |review| %>
+	<p> <%= review.email %> says: -
+	<%=review.comment %>  <%= link_to("Delete review", movie_review_path(@reviews.find params[:id]), method: "delete", data: {confirm: "Are you sure?"}) %> </p>
+<% end %> 
+<p><%= link_to("Go back",movie_path(@movie)) %></p> <!-- lo de dentro de path sirve para coger la id -->

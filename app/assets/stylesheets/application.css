@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+body {
+	width:1000px;
+}
+.film_box{
+	display: inline-block;
+}
+.title_box {
+	width:240px;
+	height:100px;
+}
+.movietitle {
+	text-align: center;
+	font-size: 45px;
+	color:grey;
+}
+.film_specific_box {
+	margin: 0 auto;
+	display:block;
+}
+
+.c_members {
+	display:inline-block;
+}
+.body_members {
+	height:400px;
+}
+p {
+	font-size: 20px;
+	font-family: Garamond;
+}
+.image_movieactor {
+ width:400px;
+ height:540px;
+}

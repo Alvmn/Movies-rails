@@ -6,3 +6,4 @@ class CreateMovieCastMembers < ActiveRecord::Migration
     end
   end
 end
+add_column
